@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Give you friend a Mustache">
+    <meta name="author" content="Flávio Amaral">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <title>Movember</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mustache.css"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li><button type="button" class="btn btn-partilhar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Partilhar <span class="caret"></span>
+                </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </li>
+                <li><button type="button" class="btn btn-carregar" aria-haspopup="true" aria-expanded="false">Carregar</button></li>
+                <li><button type="button" class="btn btn-render" aria-haspopup="true" aria-expanded="false">Render</button></li>
+                <li><button type="button" class="btn btn-guardar" aria-haspopup="true" aria-expanded="false">Guardar</button></li>
+            </ul>
+        </nav>
+        <img src="imagens/moustacheLogo.jpg" alt="Mustache" title="Mustache" class="img-responsive" id="logo"/>
+    </div>
+
+    <!-- zona de carregar a foto -->
+    <div class="jumbotron">
+        <div id="image-holder"></div>
+        <div class="jumbotron-content">
+        <span class="glyphicon glyphicon-cloud-upload upload"></span>
+        <h1 class="texto">Carrega uma Foto!</h1>
+        <p class="lead">Escolhe uma foto tua, de um amigo ou até de um familar, aproveita o movember, e escolhe o bigode que mais se adequa a eles!</p>
+        <input type="file" class="button btn-carregar" multiple>
+        </div>
+    </div>
+
+
+
+    <a style="display: none;" id="download" href="" download="mustache.png"> <img src="" id="preview" alt=""/></a>
+
+
+   <!-- <canvas width="500" height="300" id="canvas">Sorry, no canvas available</canvas>
+    <a id="download">Download as image</a>-->
+
+    <!-- Todas os bigodes -->
+    <div class="row">
+
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode da Itália">
+                <img src="imagens/italia.png" class="draggable">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode da Alemanha">
+                <img src="imagens/alemanha.png" class="draggable" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode de Portugal">
+                <img src="imagens/portugal.png" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode do Mexico">
+                <img src="imagens/mexico.png" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode de França">
+                <img src="imagens/frança.png" alt="...">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-2">
+            <a href="#" class="thumbnail mustache-tooltip" data-toggle="tooltip" data-placement="bottom" title="Bigode da Russia">
+                <img src="imagens/russia.png" alt="...">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="tools"></div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <p>&copy; 2015 All rights reserved to <a href="http://flavioamaral.pt" target="_blank">Flávio Amaral </a>/Mustache</p>
+    </footer>
+
+</div> <!-- /container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

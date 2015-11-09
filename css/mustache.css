@@ -1,0 +1,41 @@
+#logo{
+    width: 95px;
+    height: 40px;
+}
+
+.upload{
+    font-size: 50px;
+    color: #52586E;
+}
+
+.texto{
+    color: #52586E!important;
+}
+
+.btn-guardar{
+    background-color: #4f6a92;
+    color: #ffffff;
+}
+
+.btn-carregar{
+
+}
+
+
+
+
+.btn-carregar , .btn-partilhar{
+    background-color: #a7b8d1;
+    color: #ffffff;
+}
+
+.btn-carregar:hover , .btn-guardar:hover, .btn-partilhar:hover{
+    color: #ffffff;
+}
+
+.thumb-image {
+    width:400px;
+    position:relative;
+    padding:5px;
+}
+
