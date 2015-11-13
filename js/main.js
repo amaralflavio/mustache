@@ -1,9 +1,21 @@
+/* global html2canvas */
 /**
  * Created by FARA- on 07/11/2015.
  */
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29237910-10', 'auto');
+  ga('send', 'pageview');
+
+
 $('.mustache-tooltip').tooltip();
 
 var inicio = 0;
+var imgHeight, imgWidth;
 
 if(inicio == 0){
     $(".btn-guardar").hide();
@@ -40,8 +52,8 @@ $(".btn-carregar").on('change', function () {
                 inicio = 1;
                 $(".btn-guardar").show();
                 $(".btn-partilhar").show();
-                render();
-
+                imgHeight =  $(".thumb-image").height(); 
+                imgWidth = $(".thumb-image").width(); 
             }
 
         } else {
@@ -54,31 +66,47 @@ $(".btn-carregar").on('change', function () {
 
 var imgPreview = document.getElementById("preview");
 
-$( ".btn-guardar" ).click(function() {
+$(".btn-guardar").click(function() {
     document.getElementById('download').click();
 });
 
-$( ".btn-render" ).click(function() {
-    render();
+$(".btn-guardar").mouseover(function() {
+  render();
 });
 
+$(".btn-guardar").mouseleave(function() {
+  //cleanRender();
+});
+
+$(".btn-carregar-top").click(function() {
+     location.reload();
+});
 
 function render(){
-    html2canvas($("#image-holder"), {
-        onrendered: function(canvas) {
-            document.body.appendChild(canvas);
-            var data = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            document.getElementById("download").href=data;
-            imgPreview.src = data;
-        },
-        width: 1000,
-        height: 1000
-    });
+        html2canvas($("#image-holder"), {
+            onrendered: function(canvas) {
+              //  console.log(canvas);
+              //  document.body.appendChild(canvas);
+                var data = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                document.getElementById("download").href=data;
+                imgPreview.src = data;
+            },
+            width: imgWidth,
+            height: imgHeight
+        });
 }
 
-
-
-$( ".draggable" ).draggable({ revert: "valid" });
+$( ".draggable" ).draggable({ 
+    revert: "valid", 
+    helper: function() {
+            return jQuery(this).clone().appendTo('body').css({
+                'zIndex': 5
+            });
+        },
+        cursor: 'move',
+        containment: "document"
+    });
+    
 $( "#image-holder" ).droppable({
     greedy: true,
     accept: '.draggable',
@@ -89,8 +117,6 @@ $( "#image-holder" ).droppable({
                 jQuery(ui.draggable).clone()
                     .addClass("dropped").draggable());
         }
-
     }
 });
-
 

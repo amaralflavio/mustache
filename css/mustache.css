@@ -13,15 +13,13 @@
 }
 
 .btn-guardar{
-    background-color: #4f6a92;
-    color: #ffffff;
+    background-color: #8193AD;
+    color: #FFF;
 }
 
-.btn-carregar{
-
+.btn-guardar:hover, .btn-guardar:active{
+    background-color: #5B7292;
 }
-
-
 
 
 .btn-carregar , .btn-partilhar{
@@ -37,5 +35,79 @@
     width:400px;
     position:relative;
     padding:5px;
+}
+
+
+.draggable
+{
+    position: relative; 
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;   
+
+    cursor: hand; 
+    cursor: pointer;       
+}
+
+.resizables
+{
+    width: 100px;   
+    border: 1px solid #bb0000;   
+}
+.resizables img
+{
+    width: 100%;   
+}
+
+.ui-resizable-handle 
+{
+    background: #f5dc58;
+    border: 1px solid #FFF;
+    width: 9px;
+    height: 9px;
+    
+    z-index: 2;
+}
+.ui-resizable-se
+{
+    right: -5px;
+    bottom: -5px;
+}
+
+.ui-rotatable-handle 
+{
+    background: #f5dc58;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    
+    height:        10px;
+    left:          50%;
+    margin:        0 0 0 -5px;
+    position:      absolute;
+    top:           -5px;
+    width:         10px;
+}
+.ui-rotatable-handle.ui-draggable-dragging
+{
+    visibility:  hidden;
+}
+
+
+.m_italia{
+    background: url('../imagens/italia.png');
+    position: relative;
+    height:45px; width: 156px;
+    z-index:99;
+}
+
+.dropped_position{
+    left: 0 !important;
+    top:0 !important;
 }
 
